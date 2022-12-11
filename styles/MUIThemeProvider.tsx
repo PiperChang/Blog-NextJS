@@ -7,14 +7,13 @@ type Props = {
   children: React.ReactNode
 }
 
-const MUIThemeProvider = ({children}:Props) => {
+const MUIThemeProvider = ({ children }: Props) => {
   const { theme, mode, toggleColorMode } = useMUITheme()
   return (
     <ThemeProvider theme={theme}>
-        {children}
+      {children}
       <ThemeChangeButton mode={mode} toggleColorMode={toggleColorMode} />
     </ThemeProvider>
-
   )
 }
 

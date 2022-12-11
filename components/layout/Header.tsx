@@ -21,9 +21,7 @@ const Header = () => {
         <Tabs
           value={route}
           onChange={handleChange}
-          textColor="secondary"
-          indicatorColor="secondary"
-          aria-label="secondary tabs example"
+          aria-label="Navigation bar"
         >
           <Tab value="/post" label="Posts" />
           <Tab value="/about" label="About" />

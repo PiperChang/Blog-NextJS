@@ -1,5 +1,5 @@
-import axios, {AxiosError, AxiosResponse} from 'axios'
-import { stringify } from 'querystring';
+import axios, { AxiosError, AxiosResponse } from "axios";
+import { stringify } from "querystring";
 
 interface IHttpClient {
   request<T extends Promise<Response>>({
@@ -14,11 +14,18 @@ export class HttpClient implements IHttpClient {
   constructor(baseURL: string) {
     this.baseURL = baseURL;
     this.client = axios.create({ baseURL: this.baseURL });
+    console.log(this.client)
   }
-  request({...options}) {
+
+  request({ ...options }) {
     const onSuccess = (response: AxiosResponse) => response;
     const onError = (error: AxiosError) => error;
-
-    return this.client(options).then(onSuccess).catch(onError)
+    return this.client(options).then(onSuccess).catch(onError);
+  }
+  interceptRequest(requestInterceptorFn, errorInterceptorFn = undefined) {
+    this.client.interceptors.request.use(
+      requestInterceptorFn,
+      errorInterceptorFn
+    );
   }
 }

@@ -1,5 +1,5 @@
 import {AxiosResponse} from 'axios'
-import { HttpClient } from './httpClient'
+import { HttpClient } from '../../api/httpClient'
 type getDatabase = {
 }
 
@@ -12,11 +12,10 @@ export class NotionService implements InotionService {
   constructor(httpClient : HttpClient) {
     this.httpClient = httpClient;
   }
+
   /**
    * post 관련 api
    * 1. GET 
    * 2. POST COMMENT
    */
-  
-
 }

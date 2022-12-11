@@ -1,5 +1,5 @@
 import { AxiosResponse } from "axios";
-import { HttpClient } from "./httpClient";
+import { HttpClient } from "../../api/httpClient";
 
 type AuthData = {
   email: string;
