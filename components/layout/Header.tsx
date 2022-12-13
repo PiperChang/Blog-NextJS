@@ -23,7 +23,8 @@ const Header = () => {
           onChange={handleChange}
           aria-label="Navigation bar"
         >
-          <Tab value="/post" label="Posts" />
+          <Tab value="/projects" label="Projects" />
+          <Tab value="/community" label="Community" />
           <Tab value="/about" label="About" />
         </Tabs>
       </nav>

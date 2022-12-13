@@ -23,9 +23,9 @@ export class NotionService implements InotionService {
       method: "GET",
       url: `/databases/${process.env.NEXT_PUBLIC_NOTION_DATABASE}`,
     }).then((res)=>{
-      alert(res)
+      console.log("안 에러");
     }).catch((err)=>{
-      alert(err)
+      console.log("에러");      
     })
     return res
   }
