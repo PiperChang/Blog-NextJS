@@ -7,7 +7,6 @@ interface InotionService {
 export class NotionService implements InotionService {
   private httpClient: HttpClient;
 
-  // 
   constructor(httpClient: HttpClient) {
     this.httpClient = httpClient;
 
