@@ -10,13 +10,13 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <RecoilRoot>
+      <CssBaseline enableColorScheme/>
         <MUIThemeProvider>
           <Global
             styles={css`
             ${reset}
           `}
           />
-          <CssBaseline />
           <Layout>
             <Component {...pageProps} />
           </Layout>
@@ -24,4 +24,8 @@ export default function App({ Component, pageProps }: AppProps) {
       </RecoilRoot>
     </>
   );
+}
+
+async function getStaticProps() {  
+  
 }
