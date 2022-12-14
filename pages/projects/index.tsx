@@ -3,33 +3,21 @@ import axios, { AxiosResponse } from 'axios';
 import { notionService } from '../../api';
 import { NOTION_DATABASE } from '../../constants/Notion';
 import { NOTION_TOKEN } from '../../constants/Notion';
-import {Paper, Card} from '@mui/material';
-
-interface IProject {
-  object: string,
-    id : string,
-    created_time: string,
-    cover: string,
-    icon: string,
-    parent: {
-      type: string,
-      database_id: string
-    },
-    archived: string,
-    properties: string,
-    url: string
-}
-
+import { Paper } from '@mui/material';
+import ProjectCard from '../../components/projects/projectCard';
+import { IProject } from './../../components/projects/project.d';
 interface Props {
-  projectData : Array<IProject>
+  projectData: Array<IProject>
 }
 
-const Projects = ({projectData}:Props) => {
-  const projectList = projectData.map((project)=>{
+const Projects = ({ projectData }: Props) => {
+  console.log(projectData);
+  
+  const projectList = projectData.map((project) => {
+    console.log(project.properties);
+
     return (
-      <Card key={project.id}>
-        {project.id} 맞냐
-      </Card>
+      <ProjectCard key={project.id} data={project} />
     )
   })
 
@@ -56,9 +44,9 @@ export async function getStaticProps() {
   };
 
   const res = await axios.request(options)
-  
+
   const projectData = res.data.results
   return {
-    props: {projectData}
+    props: { projectData }
   }
 }
