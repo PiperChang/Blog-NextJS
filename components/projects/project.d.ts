@@ -1,28 +1,30 @@
-declare IProject
+declare;
+IProject;
 
 export interface IProject {
-  object: string,
-  id: string,
-  created_time: string,
-  cover: string,
-  icon: string,
+  object: string;
+  id: string;
+  created_time: string;
+  cover: string;
+  icon: string;
   parent: {
-    type: string,
-    database_id: string
-  },
-  archived: string,
-  properties: string,
-  url: string
+    type: string;
+    database_id: string;
+  };
+  archived: string;
+  properties: ProjectProperties;
+  url: string;
 }
 
-interface ProjectProperties {
-  Name: PropertiesAttributes,
-  Tags : PropertiesAttributes,
-  WorkPeriod :PropertiesAttributes,
-  Github:PropertiesAttributes,
-  Description:PropertiesAttributes,
-} 
+export interface ProjectProperties {
+  Name: PropertiesAttributes;
+  Tags: PropertiesAttributes;
+  WorkPeriod: PropertiesAttributes;
+  Github: PropertiesAttributes;
+  Description: PropertiesAttributes;
+}
 
-interface PropertiesAttributes {}
-id:string,
-type:
+interface PropertiesAttributes {
+  id: string;
+  type: string;
+}
