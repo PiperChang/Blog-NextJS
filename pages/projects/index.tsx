@@ -53,6 +53,7 @@ export async function getStaticProps() {
   const res = await axios.request(options)
 
   const projectData = res.data.results
+  
   return {
     props: { projectData }
   }

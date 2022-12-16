@@ -15,7 +15,8 @@ const Header = () => {
   return (
     <S.header>
       <h1>
-        <img className="logo" src="/images/logo.png" alt="logo" />
+        <Tab label="김창희 블로그"/>
+        {/* <img className="logo" src="/images/logo.png" alt="logo" /> */}
       </h1>
       <nav>
         <Tabs
@@ -39,8 +40,9 @@ const S = {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 64px;
-    border-bottom: 1px solid;
+    height: 48px;
+    box-sizing: border-box;
+    border-bottom: 1px solid gray;
     nav {
       * {
         margin: auto 0;

@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import Footer from './Footer'
 import Header from './Header'
 import { Box } from '@mui/material';
+import { Container } from "@mui/system";
 
 type Props = {
   children: React.ReactNode
@@ -13,11 +14,11 @@ const Layout = ({ children }: Props) => {
                bgcolor: 'background.default',
                color: 'text.primary',
       }}>
-        <S.container>
+          <Container maxWidth="lg">
           <Header />
             {children}
           <Footer />
-        </S.container>
+          </Container>
       </Box>
   )
 }

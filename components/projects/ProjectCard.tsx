@@ -66,14 +66,14 @@ const ProjectCard = ({ data }: Props) => {
       <CardActions style={{ padding: 10}}>
         <Typography gutterBottom variant="h6" component="div">
           <a href={githubLink}>
-            <Button size="small" color="primary" variant="outlined">
+            <Item>
               <AiFillGithub size={25} />
-            </Button>
+            </Item>
           </a>
           <a href={notionLink}>
-            <Button size="small" color="primary" variant="outlined">
+            <Item>
               <SiNotion size={25} />
-            </Button>
+            </Item>
           </a>
         </Typography>
       </CardActions>
