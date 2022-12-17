@@ -8,7 +8,6 @@ const nextConfig = {
     domains: [
       "www.notion.so",
       "images.unsplash.com",
-      // 's3.'
     ],
   },
   async redirects() {

@@ -1,31 +1,24 @@
 import type { AppProps } from "next/app";
 import { atom, RecoilRoot, useRecoilState } from "recoil";
 import Layout from "./../components/layout/Layout";
-import { reset } from "../styles/global";
-import { Global, css } from "@emotion/react";
-import { CssBaseline } from "@mui/material";
-import MUIThemeProvider from "../styles/MUIThemeProvider";
+import 'styles/global.css'
+import { ThemeProvider } from 'next-themes'
+
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <RecoilRoot>
-      <CssBaseline enableColorScheme/>
-        <MUIThemeProvider>
-          <Global
-            styles={css`
-            ${reset}
-          `}
-          />
+        <ThemeProvider attribute='class' enableSystme={true}>
           <Layout>
             <Component {...pageProps} />
           </Layout>
-        </MUIThemeProvider>
+        </ThemeProvider>
       </RecoilRoot>
     </>
   );
 }
 
-async function getStaticProps() {  
-  
+async function getStaticProps() {
+
 }
