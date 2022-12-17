@@ -10,26 +10,14 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
   return (
-      <Box sx={{
-               bgcolor: 'background.default',
-               color: 'text.primary',
-      }}>
-          <Container maxWidth="lg">
-          <Header />
-            {children}
-          <Footer />
-          </Container>
-      </Box>
+    <>    
+      <section className="container px-5 mx-auto min-w-fit">
+      <Header />
+        {children}
+      <Footer />
+      </section>
+    </>
   )
 }
 
 export default Layout
-
-const S = {
-  container: styled.div`
-    margin: 0 auto;
-    width: 100vw;
-    max-width: 1240px;
-    min-height: 100vh;
-  `,
-};

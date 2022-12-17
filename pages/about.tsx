@@ -5,10 +5,10 @@ import Hero from 'components/about/Hero';
 
 const about = () => {
   return (
-    <Box sx={{ display: 'flex' }} >
+    <div>
       <Hero />
-    </Box>
-  )
+    </div>
+        )
 }
 
 export default about

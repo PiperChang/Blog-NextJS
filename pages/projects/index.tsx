@@ -3,35 +3,28 @@ import axios, { AxiosResponse } from 'axios';
 import { notionService } from '../../api';
 import { NOTION_DATABASE } from '../../constants/Notion';
 import { NOTION_TOKEN } from '../../constants/Notion';
-import { Grid, Paper } from '@mui/material';
-import ProjectCard from '../../components/projects/projectCard';
 import { IProject } from './../../components/projects/project.d';
+import ProjectCard from 'components/projects/ProjectCard';
 interface Props {
   projectData: Array<IProject>
 }
 
 const Projects = ({ projectData }: Props) => {
-  const projectList = projectData.map((project) => {
+  const projectList = projectData.map((project,idx) => {
     return (
-      <Grid key={project.id} item
-        xs={16}
-        sm={6}
-        md={4}
-      >
-        <ProjectCard data={project} />
-      </Grid>
+        <ProjectCard key={`proj${idx}`} data={project} />
     )
   })
 
   return (
-    <Paper>
-      <Grid container spacing={2} alignItems="center"
-        justifyContent="center"
-        p={2}
-      >
-        {projectList}
-      </Grid>
-    </Paper>
+    // <section className="text-gray-400 body-font">
+    //   <div className="container px-5 py-24 mx-auto">
+        <div className="grid grid-cols-1 gap-8 p-12 m-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {projectList}
+        </div>
+    //   </div>
+    // </section>
+
   )
 }
 
@@ -53,7 +46,7 @@ export async function getStaticProps() {
   const res = await axios.request(options)
 
   const projectData = res.data.results
-  
+
   return {
     props: { projectData }
   }
