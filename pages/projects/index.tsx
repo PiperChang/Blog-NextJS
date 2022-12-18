@@ -18,11 +18,11 @@ const Projects = ({ projectData }: Props) => {
 
   return (
     // <section className="text-gray-400 body-font">
-    //   <div className="container px-5 py-24 mx-auto">
+      <div className="container px-5 py-24 mx-auto">
         <div className="grid grid-cols-1 gap-8 p-12 m-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {projectList}
         </div>
-    //   </div>
+       </div>
     // </section>
 
   )

@@ -7,7 +7,7 @@
 }
 
 .btn-tags { 
-  @apply inline-flex text-slate-900 dark:text-white rounded border-0 p-1 mr-1 
+  @apply inline-flex text-slate-900 rounded border-0 p-1 mr-1  text-xs font-bold
 }
 
 .btn-project {
@@ -15,13 +15,12 @@
 }
 
 .project-card {
-  @apply flex flex-col m-3 rounded-xl w-full
+  @apply h-full border-2 rounded-lg
           transition duration-300 transform border border-gray-300
           hover:scale-105
           hover:shadow-lg
           dark:border-gray-200/50
           dark:hover:shadow-gray-400/40
-          hover:text-blue-600
 }
 
 h1, h2, h3, h4, h5, h6 {
