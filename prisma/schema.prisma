@@ -1,30 +1,73 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
 generator client {
   provider = "prisma-client-js"
 }
 
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-}
-
-model Tips {
+model Tip {
   id       Int     @id @default(autoincrement())
   title    String?
   subTitle String?
-  content  Json
+  content  String @db.Text
+  // User User? @relation(fields: [user_id], references: [id])
+  // user_id Int
+  view_cnt Int
+  created_at DateTime  @default(now()) @db.Date
+  updated_at DateTime  @updatedAt
 }
 
-model Projects {
+model User {
   id    Int     @id @default(autoincrement())
-  name  String?
-  Tasks Tasks[]
+  name  String
+  email String  @unique
+  password  String
 }
 
-model Tasks {
-  id        Int      @id @default(autoincrement())
-  projectId Int
-  project   Projects @relation(fields: [projectId], references: [id])
+model user_tip_like {
+  User User @relation(fields: [user_id], references: [id])
+  user_id Int
+  Tip Tip @relation(fields: [tip_id], references: [id])
+  tip_id Int
+}
+model user_comment_like {
+  User User @relation(fields: [user_id], references: [id])
+  user_id Int
+  Comment Tip @relation(fields: [comment_id], references: [id])
+  comment_id Int
+}
+model Comment {
+  id       Int     @id @default(autoincrement())
+  content  String @db.Text
+  User User? @relation(fields: [user_id], references: [id])
+  user_id Int
+
+  Tip Tip? @relation(fields: [tip_id], references: [id])
+  tip_id Int
+  
+  Comment Comment? @relation(fields: [parent_comment_id], references: [id])
+  parent_comment_id Int
+  
+  deleted_flag  Boolean
+  created_at DateTime  @default(now()) @db.Date
+  updated_at DateTime  @updatedAt
+}
+
+model Tip_tag {
+  Tip Tip? @relation(fields: [tip_id], references: [id])
+  tip_id Int 
+  Tag Tag? @relation(fields: [tag_id], references: [id])
+  tag_id Int  
+  // @@id(fields: [tip_id,tag_id])
+  @@id([tip_id, tag_id])
+}
+
+model Tag {
+  id Int  @id @default(autoincrement())
+  name  String
 }
