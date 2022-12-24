@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <RecoilRoot>
-        <ThemeProvider attribute='class' enableSystme={true}>
+        <ThemeProvider attribute='class' enableSystem={true}>
           <Layout>
             <Component {...pageProps} />
           </Layout>

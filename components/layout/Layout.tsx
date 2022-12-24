@@ -10,11 +10,13 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
   return (
-    <div className="min-h-screen">    
-      <Header />
-      <section className="container px-5 mx-auto min-w-fit">
-        {children}
+    <div className="flex flex-col min-h-screen">
+        <Header />
+        <div className="flex-1">
+        <section className="container px-5 mx-auto min-w-fit">
+          {children}
         </section>
+      </div>
       <Footer />
     </div>
   )

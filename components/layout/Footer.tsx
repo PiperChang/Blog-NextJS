@@ -2,16 +2,16 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="text-gray-600 body-font">
+    <footer className="text-gray-600 body-font ">
       <div className="container px-5 py-0 mx-auto ">
         <div className="flex flex-wrap md:text-left text-center order-first">
         <div className="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
           <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
             <span className="ml-3 text-xl">Tailblocks</span>
           </a>
-          <p className="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">Copyright © 창해. All rights reserved.
+          <div className="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">Copyright © 창해. All rights reserved.
             <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank">@Piperchang</a>
-          </p>
+          </div>
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
             <a className="text-gray-500">
               <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
