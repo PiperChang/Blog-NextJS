@@ -72,14 +72,14 @@ model Comment {
 
 model TipTag {
   Tip Tip @relation(fields: [tipId], references: [id])
-  tipId Int 
+  tipId Int
   Tag Tag @relation(fields: [tagId], references: [id])
   tagId Int  
   @@id([tipId, tagId])
 }
 
 model Tag {
-  id Int  @id @default(autoincrement())
-  TipTag  TipTag?
+  id Int  @id @default(autoincrement()) 
+  TipTag  TipTag[]
   name  String
 }
