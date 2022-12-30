@@ -18,7 +18,6 @@
     "isolatedModules": true,
     // "jsx": "preserve",
     "jsx": "preserve",
-    "jsxImportSource": "@emotion/react",
     "incremental": true,
     "baseUrl": "./"
   },
