@@ -1,8 +1,5 @@
-import styled from "@emotion/styled";
 import Footer from './Footer'
 import Header from './Header'
-import { Box } from '@mui/material';
-import { Container } from "@mui/system";
 
 type Props = {
   children: React.ReactNode

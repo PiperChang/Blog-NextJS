@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import styled from "@emotion/styled";
 import { useRouter } from "next/router";
 import ThemeToggleButton from "components/common/ThemeToggleButton";
 import Link from "next/link";
@@ -47,25 +46,3 @@ const Header = () => {
 };
 
 export default Header;
-
-const S = {
-  header: styled.header`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 48px;
-    box-sizing: border-box;
-    margin-bottom: 16px;
-    nav {
-      * {
-        margin: auto 0;
-        bottom: 0;
-      }
-      height: inherit;
-    }
-    .logo {
-      height: 64px;
-      object-fit: contain;
-    }
-  `,
-};

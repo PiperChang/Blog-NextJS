@@ -1,5 +1,3 @@
-declare;
-IProject;
 
 export interface IProject {
   object: string;
