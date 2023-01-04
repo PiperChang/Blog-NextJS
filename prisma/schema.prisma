@@ -16,13 +16,19 @@ model Tip {
   subTitle String?
   content  String @db.Text
 
-  view_cnt Int
+  view_cnt Int  @default(0)
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
 
   UserTipLike UserTipLike[]
   Comments  Comment[]
   tags Tag[]
+}
+
+model Tag {
+  id Int  @id @default(autoincrement()) 
+  tips  Tip[]
+  name  String @unique
 }
 
 model User {
@@ -68,10 +74,4 @@ model Comment {
   updatedAt DateTime  @updatedAt
 
   UserCommentLike UserCommentLike[]
-}
-
-model Tag {
-  id Int  @id @default(autoincrement()) 
-  tips  Tip[]
-  name  String @unique
 }
