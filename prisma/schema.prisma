@@ -17,8 +17,8 @@ model Tip {
   content  String @db.Text
 
   view_cnt Int
-  created_at DateTime  @default(now()) @db.Date
-  updated_at DateTime  @updatedAt
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
 
   UserTipLike UserTipLike[]
   Comments  Comment[]
@@ -64,8 +64,8 @@ model Comment {
   childComment Comment[] @relation("ParentChildComment")
 
   deleted_flag  Boolean
-  created_at DateTime  @default(now()) @db.Date
-  updated_at DateTime  @updatedAt
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
 
   UserCommentLike UserCommentLike[]
 }
@@ -81,5 +81,5 @@ model TipTag {
 model Tag {
   id Int  @id @default(autoincrement()) 
   TipTag  TipTag[]
-  name  String
+  name  String @unique
 }
