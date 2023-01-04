@@ -22,7 +22,7 @@ model Tip {
 
   UserTipLike UserTipLike[]
   Comments  Comment[]
-  Tip_tag TipTag[]
+  tags Tag[]
 }
 
 model User {
@@ -70,16 +70,8 @@ model Comment {
   UserCommentLike UserCommentLike[]
 }
 
-model TipTag {
-  Tip Tip @relation(fields: [tipId], references: [id])
-  tipId Int
-  Tag Tag @relation(fields: [tagId], references: [id])
-  tagId Int  
-  @@id([tipId, tagId])
-}
-
 model Tag {
   id Int  @id @default(autoincrement()) 
-  TipTag  TipTag[]
+  tips  Tip[]
   name  String @unique
 }
