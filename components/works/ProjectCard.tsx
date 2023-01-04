@@ -18,8 +18,8 @@ const ProjectCard = ({ data }: Props) => {
   const tags = data.properties.Tags.multi_select;
 
   return (
-    <div className="project-card">
-      <div className="overflow-hidden relative h-28">
+    <div className="project-card overflow-hidden">
+      <div className=" overflow-hidden relative h-28">
         <Image
           src={coverImg}
           alt={`Cover Img ${title}`}

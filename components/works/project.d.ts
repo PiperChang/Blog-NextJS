@@ -14,7 +14,7 @@ export interface IProject {
   url: string;
 }
 
-export interface ProjectProperties {
+export interface ProjectPropS {
   Name: PropertiesAttributes;
   Tags: PropertiesAttributes;
   WorkPeriod: PropertiesAttributes;
